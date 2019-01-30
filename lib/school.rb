@@ -25,12 +25,16 @@ class School
     end
 
     def sort
-        @@roster = @@roster.sort.to_h
-        @@roster = @@roster.each {|grade, students|
-            students.sort
+        # @@roster = @@roster.sort.to_h
+        sorted = {}
+        @@roster.each {|grade, students|
+            sorted[grade] = students.sort
         }
+        sorted
+        # binding.pry
     end
     
 end
 
 # binding.pry
+# Thanks to Matt Brophy for help on #sort
